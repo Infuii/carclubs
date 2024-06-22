@@ -126,7 +126,7 @@ const About = () => {
             Learn More &gt;
           </motion.a>
         </motion.div>
-        <motion.div className="flex flex-col space-y-4 md:w-1/2 md:block hidden">
+        <motion.div className=" flex-col space-y-4 md:w-1/2 md:block hidden">
           <div className="relative">
             <motion.img
               src="car7.JPG" // Adjust the path as necessary

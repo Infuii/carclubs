@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const images = ["car1.JPG", "car2.jpg", "car3.jpeg", "car4.jpeg", "car5.jpeg"];
 

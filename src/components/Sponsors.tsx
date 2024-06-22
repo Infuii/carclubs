@@ -1,5 +1,3 @@
-import React from "react";
-
 const Sponsors = () => {
   return (
     <div className="py-16 bg-white overflow-x-hidden">
