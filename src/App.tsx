@@ -7,7 +7,7 @@ import Team from "./components/Team";
 import Footer from "./components/Footer";
 const App = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white w-[99.2415vw]">
       <Header />
       <Hero />
       <Sponsors />

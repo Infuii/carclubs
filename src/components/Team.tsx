@@ -102,7 +102,7 @@ const Team = () => {
   };
 
   return (
-    <div className="container mx-auto my-16 px-4">
+    <div id="team" className="container mx-auto my-16 px-4">
       <h2 className="text-4xl font-bold text-black mb-8 text-center">
         Our Team
       </h2>

@@ -49,20 +49,10 @@ const Header = () => {
         <ul className="flex space-x-4 mt-4">
           <motion.li variants={linkVariants}>
             <Link
-              to="home"
-              smooth={true}
-              duration={500}
-              className="cursor-pointer uppercase"
-            >
-              Home
-            </Link>
-          </motion.li>
-          <motion.li variants={linkVariants}>
-            <Link
               to="gallery"
               smooth={true}
-              duration={500}
-              className="cursor-pointer uppercase"
+              duration={1}
+              className="cursor-pointer uppercase text-black"
             >
               Gallery
             </Link>
@@ -71,8 +61,8 @@ const Header = () => {
             <Link
               to="about"
               smooth={true}
-              duration={500}
-              className="cursor-pointer uppercase"
+              duration={1}
+              className="cursor-pointer uppercase text-black"
             >
               About
             </Link>
@@ -81,8 +71,8 @@ const Header = () => {
             <Link
               to="team"
               smooth={true}
-              duration={500}
-              className="cursor-pointer uppercase"
+              duration={1}
+              className="cursor-pointer uppercase text-black"
             >
               Team
             </Link>
@@ -91,8 +81,8 @@ const Header = () => {
             <Link
               to="contact"
               smooth={true}
-              duration={500}
-              className="cursor-pointer uppercase"
+              duration={1}
+              className="cursor-pointer uppercase text-black"
             >
               Contact
             </Link>

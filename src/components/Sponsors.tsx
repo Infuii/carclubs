@@ -15,16 +15,14 @@ const Sponsors = () => {
           </div>
           <div className="w-full md:w-1/4 p-4">
             <img
-              src="sponsor.png"
+              src="sponsor2.png"
               alt="Sponsor 2"
               className="w-full h-auto object-cover"
             />
           </div>
         </div>
-        <div className="mt-8">
-          <p className="text-2xl font-bold text-black">
-            April 27th Cars and Coffee
-          </p>
+        <div className="mt-12">
+          <p className=" font-bold text-black text-4xl">Gallery</p>
         </div>
       </div>
     </div>

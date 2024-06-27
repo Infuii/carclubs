@@ -40,7 +40,10 @@ const Gallery = () => {
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto overflow-hidden">
+    <div
+      id="gallery"
+      className="relative w-full max-w-7xl mx-auto overflow-hidden"
+    >
       <div
         className="flex transition-transform duration-1000 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

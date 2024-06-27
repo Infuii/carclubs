@@ -61,7 +61,7 @@ const About = () => {
   };
 
   return (
-    <div className="container mx-auto my-16 px-4">
+    <div className="container mx-auto my-16 px-4" id="about">
       <motion.div
         className="flex flex-col md:flex-row items-center"
         ref={ref}
