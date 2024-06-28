@@ -5,13 +5,15 @@ import Gallery from "./components/Gallery";
 import About from "./components/About";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import Video from "./components/Video";
 const App = () => {
   return (
     <div className="bg-white w-[99.2415vw]">
       <Header />
       <Hero />
-      <Sponsors />
+      <Video />
       <Gallery />
+      <Sponsors />
       <About />
       <Team />
       <Footer />
