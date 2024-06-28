@@ -73,12 +73,12 @@ const Gallery = () => {
     //     </button>
     //   </div>
     // </div>
-    <div className="flex justify-center items-center min-h-screen bg-white opacity-100">
-      <button className="relative group bg-white outline-none border-0 active:border-0 ">
+    <div className="flex justify-center items-center w-full bg-white opacity-100 p-4">
+      <button className="relative group bg-white outline-none border-0 active:border-0 w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
         <img
           src="galleryPhoto.png"
           alt="Gallery"
-          className="transition-transform duration-300 ease-in-out transform group-hover:scale-110"
+          className="w-full transition-transform duration-300 ease-in-out transform group-hover:scale-110 group-active:border-0"
         />
       </button>
     </div>

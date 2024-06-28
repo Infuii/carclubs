@@ -21,9 +21,6 @@ const Sponsors = () => {
             />
           </div>
         </div>
-        <div className="mt-12">
-          <p className=" font-bold text-black text-4xl">Gallery</p>
-        </div>
       </div>
     </div>
   );
