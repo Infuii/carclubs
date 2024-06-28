@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 const Video = () => {
   const [playing, setPlaying] = useState(false);
   const [ready, setReady] = useState(false);
-
+  const state = ready;
+  console.log(state);
   const handlePlay = () => {
     setPlaying(true);
   };
@@ -35,7 +36,7 @@ const Video = () => {
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </button>
-                <motion.p className="text-5xl font-bold text-white mt-4 z-20">
+                <motion.p className="md:text-5xl text-3xl font-bold text-white mt-4 z-20 text-center">
                   HHS Car Club | Cars & Coffee Show
                 </motion.p>
               </div>
