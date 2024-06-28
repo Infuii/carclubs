@@ -73,7 +73,10 @@ const Gallery = () => {
     //     </button>
     //   </div>
     // </div>
-    <div className="flex justify-center items-center w-full bg-white opacity-100 p-4">
+    <div
+      className="flex justify-center items-center w-full bg-white opacity-100 p-4"
+      id="gallery"
+    >
       <button className="relative group bg-white outline-none border-0 active:border-0 w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
         <img
           src="galleryPhoto.png"
