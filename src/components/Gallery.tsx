@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 
 const Gallery = () => {
   return (
-    <div className="flex justify-center items-center py-10 bg-white">
+    <div
+      className="flex justify-center items-center py-10 bg-white"
+      id="gallery"
+    >
       <Link to="/gallery">
         <button className="relative group bg-white outline-none border-0 active:border-0 max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">
           <img
