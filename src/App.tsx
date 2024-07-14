@@ -6,18 +6,33 @@ import About from "./components/About";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Video from "./components/Video";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GalleryPage from "./GalleryPage";
+
 const App = () => {
   return (
-    <div className="bg-white w-[99.2415vw]">
-      <Header />
-      <Hero />
-      <Video />
-      <Gallery />
-      <Sponsors />
-      <About />
-      <Team />
-      <Footer />
-    </div>
+    <Router>
+      <div className="bg-white w-[99.241vw]">
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Video />
+                <Gallery />
+                <Sponsors />
+                <About />
+                <Team />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/gallery" element={<GalleryPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 };
 
