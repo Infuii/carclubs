@@ -71,20 +71,19 @@ const About = () => {
       >
         <motion.div className="md:w-1/2 md:pr-8" variants={textVariant}>
           <motion.h2
-            className="text-4xl font-bold text-black mb-4"
+            className="text-4xl font-bold text-black mb-4 uppercase"
             variants={headingVariant}
           >
-            Our Club
+            OUR BEGINNINGs
           </motion.h2>
           <motion.p
             className="text-lg text-gray-700 mb-4"
             variants={textVariant}
           >
-            Since its beginning in 2020, the HHS Car Club has been about
-            automotive enthusiasts coming together to share their passion for
-            cars. Our members enjoy perks such as exclusive car meets, track
-            days, and social events. We welcome individuals who share our
-            interests and support the overall goals of the club.
+            Welcome to the official website of HHS Car Club. We are a group of
+            car-fanatic students ages from Hopkinton High School. If you are
+            interested in joining our team or collaborating with us in the
+            future, feel free to read further!
           </motion.p>
           <motion.p
             className="text-lg font-medium text-black mb-2"
@@ -96,27 +95,47 @@ const About = () => {
             className="text-lg text-gray-700 mb-4"
             variants={textVariant}
           >
-            Who share our interests, welcome the camaraderie, and support the
-            overall goals of the club. HHS Car Club members enjoy perks such as
-            the grand car show, road trips, and our monthly newsletter.
+            First, Surya wanted to create a Car Club at HHS. Although many
+            students expressed doubt that this rather unconventional idea would
+            work out, they were soon proved wrong. After gathering some fellow
+            car enthusiasts at HHS and securing an equally eager advisor, the
+            founding members of our club filed a proposal to the school office.
+            A few weeks later, HHS Car Club hit the road in the beginning of the
+            2023-2024 school year and has been running since.
           </motion.p>
+          <motion.h2
+            className="text-lg font-medium text-black mb-4 uppercase"
+            variants={headingVariant}
+          >
+            OUR MISSION
+          </motion.h2>
+
           <motion.p
             className="text-lg text-gray-700 mb-4"
             variants={textVariant}
           >
-            The HHS Car Club also focuses on community service, organizing
-            charity events and fundraisers to give back to the community. Our
-            members are dedicated to fostering a sense of belonging and
-            inclusivity, ensuring everyone feels welcome.
+            We strive to make a positive impact on our community. We host
+            multiple events in different locations throughout the year that are
+            completely free to the public. Our first Cars & Coffee in April 2024
+            brought together hundreds of families and friends from dozens of
+            towns. Our events also promote local causes. Our events are always
+            in collaboration with various small businesses and charity
+            organizations that have gained countless customers, donations, and
+            volunteers from our car shows.
           </motion.p>
+          <motion.h2
+            className="text-lg font-medium text-black mb-4 uppercase"
+            variants={headingVariant}
+          >
+            OUTREACH
+          </motion.h2>
           <motion.p
             className="text-lg text-gray-700 mb-4"
             variants={textVariant}
           >
-            Whether you are a seasoned car enthusiast or just getting started,
-            we invite you to join us and be a part of our community. Our events
-            are designed to create lasting memories and provide opportunities
-            for learning and growth.
+            We are always open to new ways that we can help our community. If
+            you would like to join or collaborate with us, DM @hhscarclub on
+            Instagram or email us at hhscarclub0@gmail.com.
           </motion.p>
           <motion.a
             href="#learn-more"
