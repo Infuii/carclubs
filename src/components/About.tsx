@@ -137,13 +137,6 @@ const About = () => {
             you would like to join or collaborate with us, DM @hhscarclub on
             Instagram or email us at hhscarclub0@gmail.com.
           </motion.p>
-          <motion.a
-            href="#learn-more"
-            className="text-red-500 font-semibold"
-            variants={textVariant}
-          >
-            Learn More &gt;
-          </motion.a>
         </motion.div>
         <motion.div className=" flex-col space-y-4 md:w-1/2 md:block hidden">
           <div className="relative">

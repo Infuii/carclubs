@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Sponsors from "./components/Sponsors";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
-import Team from "./components/Team";
+// import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Video from "./components/Video";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -21,11 +21,16 @@ const App = () => {
               <>
                 <Hero />
                 <Video />
-                <Gallery />
+                <section id="gallery">
+                  <Gallery />
+                </section>
                 <Sponsors />
-                <About />
-                <Team />
-                <Footer />
+                <section id="about">
+                  <About />
+                </section>
+                <section id="contact">
+                  <Footer />
+                </section>
               </>
             }
           />
@@ -35,5 +40,4 @@ const App = () => {
     </Router>
   );
 };
-
 export default App;

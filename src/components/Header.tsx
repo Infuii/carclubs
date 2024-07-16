@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { Link, useLocation } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { motion } from "framer-motion";
 
 const linkVariants = {
@@ -16,6 +17,8 @@ const textVariants = {
 };
 
 const Header = () => {
+  const location = useLocation();
+  const isGalleryPage = location.pathname === "/gallery";
   const headerText = "HHS CAR CLUB";
 
   return (
@@ -49,43 +52,30 @@ const Header = () => {
         <ul className="flex space-x-4 mt-4">
           <motion.li variants={linkVariants}>
             <Link
-              to="gallery"
-              smooth={true}
-              duration={1}
+              to={isGalleryPage ? "/" : "/gallery"}
               className="cursor-pointer uppercase text-black"
             >
-              Gallery
+              {isGalleryPage ? "Home" : "Gallery"}
             </Link>
           </motion.li>
           <motion.li variants={linkVariants}>
-            <Link
-              to="about"
-              smooth={true}
-              duration={1}
+            <HashLink
+              smooth
+              to="/#about"
               className="cursor-pointer uppercase text-black"
             >
               About
-            </Link>
+            </HashLink>
           </motion.li>
+
           <motion.li variants={linkVariants}>
-            <Link
-              to="team"
-              smooth={true}
-              duration={1}
-              className="cursor-pointer uppercase text-black"
-            >
-              Team
-            </Link>
-          </motion.li>
-          <motion.li variants={linkVariants}>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={1}
+            <HashLink
+              smooth
+              to="/#contact"
               className="cursor-pointer uppercase text-black"
             >
               Contact
-            </Link>
+            </HashLink>
           </motion.li>
         </ul>
       </nav>
