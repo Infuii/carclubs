@@ -65,10 +65,10 @@ const About = () => {
       className="relative bg-fixed bg-cover bg-center "
       style={{ backgroundImage: "url('car7.JPG')" }}
     >
-      <div className="bg-black bg-opacity-50 py-16">
+      <div className="bg-black bg-opacity-50 md:py-12 py-4">
         <div className="container mx-auto my-16 px-4" id="about">
           <motion.div
-            className="flex flex-col md:flex-row items-center py-16 "
+            className="flex flex-col md:flex-row items-center md:py-12  py-4"
             ref={ref}
             initial="hidden"
             animate={controls}
