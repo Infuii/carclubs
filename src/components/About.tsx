@@ -75,7 +75,7 @@ const About = () => {
             variants={headingVariant}
           >
             <motion.div
-              className="md:w-1/2 md:pr-8 bg-white p-6 rounded-lg shadow-lg text-black"
+              className="md:w-1/2 md:pr-8 bg-white p-6 bg-opacity-65 rounded-lg shadow-lg text-black"
               variants={textVariant}
             >
               <motion.h2
