@@ -62,27 +62,30 @@ const About = () => {
 
   return (
     <div
-      className="relative bg-fixed bg-cover bg-center "
-      style={{ backgroundImage: "url('car7.JPG')" }}
+      className="relative bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: "url('car6.JPG')" }}
     >
-      <div className="bg-black bg-opacity-50 md:py-12 py-4">
+      <div className="bg-black bg-opacity-60 md:py-12 py-4">
         <div className="container mx-auto my-16 px-4" id="about">
           <motion.div
-            className="flex flex-col md:flex-row items-center md:py-12  py-4"
+            className="flex flex-col md:flex-row items-center md:py-12 py-4"
             ref={ref}
             initial="hidden"
             animate={controls}
             variants={headingVariant}
           >
-            <motion.div className="md:w-1/2 md:pr-8" variants={textVariant}>
+            <motion.div
+              className="md:w-1/2 md:pr-8 bg-white p-6 rounded-lg shadow-lg text-black"
+              variants={textVariant}
+            >
               <motion.h2
-                className="text-4xl font-bold text-white mb-4 uppercase"
+                className="text-3xl font-bold text-black mb-4 uppercase"
                 variants={headingVariant}
               >
                 OUR BEGINNINGS
               </motion.h2>
               <motion.p
-                className="text-lg text-gray-300 mb-4"
+                className="text-base text-black mb-4"
                 variants={textVariant}
               >
                 Welcome to the official website of HHS Car Club. We are a group
@@ -91,13 +94,13 @@ const About = () => {
                 future, feel free to read further!
               </motion.p>
               <motion.p
-                className="text-lg font-medium text-white mb-2"
+                className="text-base font-medium text-black mb-2"
                 variants={textVariant}
               >
                 We Embrace Individuals
               </motion.p>
               <motion.p
-                className="text-lg text-gray-300 mb-4"
+                className="text-base text-black mb-4"
                 variants={textVariant}
               >
                 First, Surya wanted to create a Car Club at HHS. Although many
@@ -110,14 +113,14 @@ const About = () => {
                 running since.
               </motion.p>
               <motion.h2
-                className="text-lg font-medium text-white mb-4 uppercase"
+                className="text-base font-medium text-black mb-4 uppercase"
                 variants={headingVariant}
               >
                 OUR MISSION
               </motion.h2>
 
               <motion.p
-                className="text-lg text-gray-300 mb-4"
+                className="text-base text-black mb-4"
                 variants={textVariant}
               >
                 We strive to make a positive impact on our community. We host
@@ -130,13 +133,13 @@ const About = () => {
                 donations, and volunteers from our car shows.
               </motion.p>
               <motion.h2
-                className="text-lg font-medium text-white mb-4 uppercase"
+                className="text-base font-medium text-black mb-4 uppercase"
                 variants={headingVariant}
               >
                 OUTREACH
               </motion.h2>
               <motion.p
-                className="text-lg text-gray-300 mb-4"
+                className="text-base text-black mb-4"
                 variants={textVariant}
               >
                 We are always open to new ways that we can help our community.
@@ -144,7 +147,7 @@ const About = () => {
                 on Instagram or email us at hhscarclub0@gmail.com.
               </motion.p>
             </motion.div>
-            <motion.div className=" flex-col space-y-4 md:w-1/2 md:block hidden">
+            <motion.div className="flex-col space-y-4 md:w-1/2 md:block hidden">
               <div className="relative">
                 <motion.img
                   src="car7.JPG" // Adjust the path as necessary
