@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-white text-black py-8 w-full z-10 border-b border-gray-300 overflow-x-hidden"
+      className="bg-gray-800 text-white py-8 w-full z-10 border-b border-gray-300 overflow-x-hidden"
       initial="hidden"
       animate="visible"
       style={{ top: 0 }}
@@ -44,7 +44,7 @@ const Header = () => {
           ))}
         </div>
         <motion.div
-          className="border-t border-b border-black mt-4 w-full"
+          className="border-t border-b border-white mt-4 w-full"
           initial={{ width: 0 }}
           animate={{ width: "50%" }}
           transition={{ duration: 2 }}
@@ -53,7 +53,7 @@ const Header = () => {
           <motion.li variants={linkVariants}>
             <Link
               to={isGalleryPage ? "/" : "/gallery"}
-              className="cursor-pointer uppercase text-black"
+              className="cursor-pointer uppercase text-white"
             >
               {isGalleryPage ? "Home" : "Gallery"}
             </Link>
@@ -62,7 +62,7 @@ const Header = () => {
             <HashLink
               smooth
               to="/#about"
-              className="cursor-pointer uppercase text-black"
+              className="cursor-pointer uppercase text-white"
             >
               About
             </HashLink>
@@ -72,7 +72,7 @@ const Header = () => {
             <HashLink
               smooth
               to="/#contact"
-              className="cursor-pointer uppercase text-black"
+              className="cursor-pointer uppercase text-white"
             >
               Contact
             </HashLink>
