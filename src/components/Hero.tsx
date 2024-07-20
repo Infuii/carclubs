@@ -25,9 +25,12 @@ const paragraphVariants = {
 
 const Hero = () => {
   return (
-    <Link to="/gallery" className="block relative overflow-x-hidden">
-      <div className="relative overflow-x-hidden flex z-1 items-center justify-center sm:py-8 sm:px-8 md:py-16 md:px-16 py-8 px-8 bg-white">
-        <div className="relative mx-auto w-full h-[550px]">
+    <Link
+      to="/gallery"
+      className="block relative w-full h-screen overflow-x-hidden"
+    >
+      <div className="relative flex z-1 items-center justify-center w-full h-full bg-white">
+        <div className="relative w-full h-full">
           <img
             src="carclubbing2.png"
             alt="Car Clubbing"
