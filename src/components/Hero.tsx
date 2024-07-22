@@ -43,7 +43,7 @@ const Hero = () => {
               animate="visible"
               variants={textVariants}
             >
-              1st cars & coffee
+              Hopkinton Car Club
             </motion.h1>
             <motion.p
               className="mt-4 text-xl md:text-2xl uppercase"
@@ -51,7 +51,7 @@ const Hero = () => {
               animate="visible"
               variants={paragraphVariants}
             >
-              Cars & Coffee April 27th 2024
+              View our First Cars & Coffee
             </motion.p>
           </div>
           <div className="absolute inset-0 bg-black opacity-50"></div>
