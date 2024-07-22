@@ -47,7 +47,7 @@ const Header = () => {
   useEffect(() => {
     const sections = document.querySelectorAll("section, #home");
     const options = {
-      threshold: 0.7,
+      threshold: 0.3, // Adjusted threshold to be more sensitive
     };
 
     const observer = new IntersectionObserver((entries) => {
