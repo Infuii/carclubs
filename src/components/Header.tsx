@@ -47,7 +47,7 @@ const Header = () => {
   useEffect(() => {
     const sections = document.querySelectorAll("section, #home");
     const options = {
-      threshold: 0.3, // Adjusted threshold to be more sensitive
+      threshold: 0.3,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -68,6 +68,21 @@ const Header = () => {
       });
     };
   }, []);
+
+  useEffect(() => {
+    // Set the active link based on the current pathname
+    if (location.pathname === "/gallery") {
+      setActiveLink("gallery");
+    } else if (location.hash === "#about") {
+      setActiveLink("about");
+    } else if (location.hash === "#tickets") {
+      setActiveLink("tickets");
+    } else if (location.hash === "#contact") {
+      setActiveLink("contact");
+    } else {
+      setActiveLink("home");
+    }
+  }, [location]);
 
   return (
     <motion.header
