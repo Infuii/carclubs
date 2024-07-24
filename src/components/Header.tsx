@@ -29,6 +29,19 @@ const Header = () => {
   const headerText = "HHS CAR CLUB";
   const location = useLocation();
 
+  const fixedNavVariants = {
+    hidden: { y: "-100%", opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 150,
+        damping: 25,
+      },
+    },
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (headerRef.current) {
@@ -70,7 +83,6 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    // Set the active link based on the current pathname
     if (location.pathname === "/gallery") {
       setActiveLink("gallery");
     } else if (location.hash === "#about") {
@@ -115,126 +127,245 @@ const Header = () => {
           transition={{ duration: 2 }}
         />
       </nav>
-      <nav
-        className={`w-full ${isFixed ? "fixed top-0 bg-gray-800 z-50" : ""}`}
-      >
-        <ul
-          className={`flex space-x-4 m-3 justify-center ${
-            isFixed ? "p-4" : ""
-          }`}
-        >
-          <motion.li variants={linkVariants} className="relative">
-            {location.pathname === "/" ? (
-              <HashLink
-                smooth
-                to="/#home"
-                className="cursor-pointer uppercase text-white"
-              >
-                Home
-                <AnimatePresence>
-                  {activeLink === "home" && (
-                    <motion.div
-                      className="absolute bottom-0 left-0 h-1 bg-white"
-                      initial="hidden"
-                      animate="visible"
-                      exit="hidden"
-                      variants={underlineVariants}
-                      key="home-underline"
-                    />
-                  )}
-                </AnimatePresence>
-              </HashLink>
-            ) : (
-              <Link to="/" className="cursor-pointer uppercase text-white">
-                Home
-              </Link>
-            )}
-          </motion.li>
-          <motion.li variants={linkVariants} className="relative">
-            <Link
-              to={"/gallery"}
-              className="cursor-pointer uppercase text-white"
-            >
-              Gallery
-              <AnimatePresence>
-                {activeLink === "gallery" && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-white"
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={underlineVariants}
-                    key="gallery-underline"
-                  />
+      <AnimatePresence>
+        {isFixed ? (
+          <motion.nav
+            className="fixed top-0 left-0 w-full bg-gray-800 z-50"
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={fixedNavVariants}
+          >
+            <ul className="flex space-x-4 m-3 justify-center p-4">
+              <motion.li variants={linkVariants} className="relative">
+                {location.pathname === "/" ? (
+                  <HashLink
+                    smooth
+                    to="/#home"
+                    className="cursor-pointer uppercase text-white"
+                  >
+                    Home
+                    <AnimatePresence>
+                      {activeLink === "home" && (
+                        <motion.div
+                          className="absolute bottom-0 left-0 h-1 bg-white"
+                          initial="hidden"
+                          animate="visible"
+                          exit="hidden"
+                          variants={underlineVariants}
+                          key="home-underline"
+                        />
+                      )}
+                    </AnimatePresence>
+                  </HashLink>
+                ) : (
+                  <Link to="/" className="cursor-pointer uppercase text-white">
+                    Home
+                  </Link>
                 )}
-              </AnimatePresence>
-            </Link>
-          </motion.li>
-          <motion.li variants={linkVariants} className="relative">
-            <HashLink
-              smooth
-              to="/#about"
-              className="cursor-pointer uppercase text-white"
-            >
-              About
-              <AnimatePresence>
-                {activeLink === "about" && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-white"
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={underlineVariants}
-                    key="about-underline"
-                  />
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <Link
+                  to={"/gallery"}
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Gallery
+                  <AnimatePresence>
+                    {activeLink === "gallery" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="gallery-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </Link>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#about"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  About
+                  <AnimatePresence>
+                    {activeLink === "about" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="about-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#tickets"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Tickets
+                  <AnimatePresence>
+                    {activeLink === "tickets" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="tickets-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#contact"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Contact
+                  <AnimatePresence>
+                    {activeLink === "contact" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="contact-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+            </ul>
+          </motion.nav>
+        ) : (
+          <nav className="w-full">
+            <ul className="flex space-x-4 m-3 justify-center">
+              <motion.li variants={linkVariants} className="relative">
+                {location.pathname === "/" ? (
+                  <HashLink
+                    smooth
+                    to="/#home"
+                    className="cursor-pointer uppercase text-white"
+                  >
+                    Home
+                    <AnimatePresence>
+                      {activeLink === "home" && (
+                        <motion.div
+                          className="absolute bottom-0 left-0 h-1 bg-white"
+                          initial="hidden"
+                          animate="visible"
+                          exit="hidden"
+                          variants={underlineVariants}
+                          key="home-underline"
+                        />
+                      )}
+                    </AnimatePresence>
+                  </HashLink>
+                ) : (
+                  <Link to="/" className="cursor-pointer uppercase text-white">
+                    Home
+                  </Link>
                 )}
-              </AnimatePresence>
-            </HashLink>
-          </motion.li>
-          <motion.li variants={linkVariants} className="relative">
-            <HashLink
-              smooth
-              to="/#tickets"
-              className="cursor-pointer uppercase text-white"
-            >
-              Tickets
-              <AnimatePresence>
-                {activeLink === "tickets" && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-white"
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={underlineVariants}
-                    key="tickets-underline"
-                  />
-                )}
-              </AnimatePresence>
-            </HashLink>
-          </motion.li>
-          <motion.li variants={linkVariants} className="relative">
-            <HashLink
-              smooth
-              to="/#contact"
-              className="cursor-pointer uppercase text-white"
-            >
-              Contact
-              <AnimatePresence>
-                {activeLink === "contact" && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-white"
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={underlineVariants}
-                    key="contact-underline"
-                  />
-                )}
-              </AnimatePresence>
-            </HashLink>
-          </motion.li>
-        </ul>
-      </nav>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <Link
+                  to={"/gallery"}
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Gallery
+                  <AnimatePresence>
+                    {activeLink === "gallery" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="gallery-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </Link>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#about"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  About
+                  <AnimatePresence>
+                    {activeLink === "about" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="about-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#tickets"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Tickets
+                  <AnimatePresence>
+                    {activeLink === "tickets" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="tickets-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+              <motion.li variants={linkVariants} className="relative">
+                <HashLink
+                  smooth
+                  to="/#contact"
+                  className="cursor-pointer uppercase text-white"
+                >
+                  Contact
+                  <AnimatePresence>
+                    {activeLink === "contact" && (
+                      <motion.div
+                        className="absolute bottom-0 left-0 h-1 bg-white"
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        variants={underlineVariants}
+                        key="contact-underline"
+                      />
+                    )}
+                  </AnimatePresence>
+                </HashLink>
+              </motion.li>
+            </ul>
+          </nav>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 };
