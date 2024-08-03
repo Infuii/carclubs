@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const controls = useAnimation();
@@ -15,31 +17,43 @@ const Contact = () => {
     }
   }, [controls, inView]);
 
-  const textVariant = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 1, delay: 0.2 },
-    },
-  };
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-  const headingVariant = {
-    hidden: { opacity: 0, y: -50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, delay: 0.1 },
-    },
-  };
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    };
 
-  const inputVariant = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1, delay: 0.3 },
-    },
+    if (!data.name || !data.email || !data.message) {
+      toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    // Form submission logic
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast.success("Form Submitted Successfully");
+        form.reset();
+      } else {
+        toast.error("Failed to send message. Please try again.");
+        console.error("Error", result);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Failed to send message. Please try again.");
+    }
   };
 
   return (
@@ -49,7 +63,10 @@ const Contact = () => {
           className="text-3xl font-extrabold text-black text-left"
           initial="hidden"
           animate={controls}
-          variants={headingVariant}
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+          }}
         >
           Contact
         </motion.h2>
@@ -57,13 +74,23 @@ const Contact = () => {
           className="border-t-8 border-black mt-4 mb-8"
           initial="hidden"
           animate={controls}
-          variants={textVariant}
-        ></motion.div>
+          variants={{
+            hidden: { width: 0 },
+            visible: { width: "100%", transition: { duration: 1 } },
+          }}
+        />
         <motion.div
           className="flex justify-between items-center"
           initial="hidden"
           animate={controls}
-          variants={textVariant}
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.1 },
+            },
+          }}
         >
           <p className="text-black text-lg font-semibold">
             HHSCARCLUB0@GMAIL.COM
@@ -72,11 +99,17 @@ const Contact = () => {
         </motion.div>
         <motion.form
           className="mt-8 space-y-6"
-          action="#"
-          method="POST"
+          onSubmit={handleSubmit}
           initial="hidden"
           animate={controls}
-          variants={inputVariant}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { duration: 1, delay: 0.2 },
+            },
+          }}
         >
           <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
             <div className="sm:col-span-1">
@@ -89,8 +122,16 @@ const Contact = () => {
                 id="name"
                 autoComplete="name"
                 placeholder="Name"
+                required
                 className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
-                variants={inputVariant}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1, delay: 0.3 },
+                  },
+                }}
               />
             </div>
             <div className="sm:col-span-1">
@@ -103,8 +144,16 @@ const Contact = () => {
                 id="email"
                 autoComplete="email"
                 placeholder="Email *"
+                required
                 className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
-                variants={inputVariant}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1, delay: 0.4 },
+                  },
+                }}
               />
             </div>
             <div className="sm:col-span-2">
@@ -118,7 +167,14 @@ const Contact = () => {
                 autoComplete="tel"
                 placeholder="Phone number"
                 className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
-                variants={inputVariant}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1, delay: 0.5 },
+                  },
+                }}
               />
             </div>
             <div className="sm:col-span-2">
@@ -130,8 +186,16 @@ const Contact = () => {
                 name="message"
                 rows={4}
                 placeholder="Comment"
+                required
                 className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
-                variants={inputVariant}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1, delay: 0.6 },
+                  },
+                }}
               ></motion.textarea>
             </div>
           </div>
@@ -139,7 +203,14 @@ const Contact = () => {
             <motion.button
               type="submit"
               className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              variants={inputVariant}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 1, delay: 0.7 },
+                },
+              }}
             >
               Send
             </motion.button>
