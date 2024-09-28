@@ -32,7 +32,8 @@ const Footer = () => {
         <div className="mt-4">
           <p className="text-gray-300 text-center">© 2021 Car Clubs</p>
           <p className="text-gray-300 text-center">
-            Image Credit: @shotbymo, @ps.newengland, @b_kerya, @sweaty_yes
+            Image Credit: @shotbymo, @ps.newengland, @b_kerya, @sweaty_yes,
+            @dhruvgshah
           </p>
         </div>
       </div>
