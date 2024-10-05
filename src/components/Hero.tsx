@@ -59,7 +59,7 @@ const buttonVariants = {
 const Hero = () => {
   return (
     <motion.div
-      className="relative w-full h-screen overflow-hidden"
+      className="relative w-full h-screen overflow-hidden bottom-1"
       initial="hidden"
       animate="visible"
     >

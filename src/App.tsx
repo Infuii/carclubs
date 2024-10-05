@@ -12,7 +12,7 @@ import Contact from "./components/Contact";
 const App = () => {
   return (
     <Router>
-      <div className="bg-white w-[99.241vw]">
+      <div className="bg-white w-screen">
         <Header />
         <Routes>
           <Route
@@ -21,7 +21,6 @@ const App = () => {
               <>
                 <Hero />
                 <Video />
-
                 <Sponsors />
                 <section id="about">
                   <About />
