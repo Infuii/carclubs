@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const images = Array.from({ length: 36 }, (_, index) => `cars${index + 1}.jpg`);
@@ -9,8 +9,36 @@ const fadeInVariants = {
 };
 
 const GalleryPage = () => {
+  const [validImages, setValidImages] = useState([]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const loadImages = async () => {
+      const validImagesList: string[] | ((prevState: never[]) => never[]) = [];
+
+      await Promise.all(
+        images.map((image) => {
+          return new Promise<void>((resolve) => {
+            const img = new Image();
+            img.src = image;
+            img.onload = () => {
+              validImagesList.push(image);
+              resolve();
+            };
+            img.onerror = () => {
+              resolve(); // Skip this image if it fails to load
+            };
+          });
+        })
+      );
+
+      setValidImages(validImagesList as never);
+    };
+
+    loadImages();
   }, []);
 
   return (
@@ -19,7 +47,7 @@ const GalleryPage = () => {
         Gallery
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {images.map((image, index) => (
+        {validImages.map((image, index) => (
           <motion.div
             key={index}
             className="w-full h-64 bg-gray-200"

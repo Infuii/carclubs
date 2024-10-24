@@ -92,8 +92,8 @@ const Contact = () => {
             },
           }}
         >
-          <p className="text-black text-lg font-semibold">
-            HHSCARCLUB0@GMAIL.COM
+          <p className="text-black text-lg font-semibold uppercase">
+            support@hopkintoncarclub.com{" "}
           </p>
           <p className="text-black text-lg">508-202-6778</p>
         </motion.div>
