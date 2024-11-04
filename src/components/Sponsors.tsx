@@ -19,7 +19,8 @@ const Sponsors = () => {
               alt="Sponsor 2"
               className="w-full h-auto object-cover"
             />
-          </div>
+          </div>{" "}
+          {/* div */}
         </div>
       </div>
     </div>
