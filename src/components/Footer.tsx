@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:flex-row md:justify-center gap-24">
           <div className="text-white flex flex-col items-center ">
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
-            <p className="text-gray-300">Email: hhscarclub0@gmail.com</p>
+            <p className="text-gray-300">Email: support@hopkintoncarclub.com</p>
             <p className="text-gray-300">Phone: 508-202-6778</p>
           </div>
           <div className="text-white flex flex-col items-center">
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-4">
-          <p className="text-gray-300 text-center">© 2021 Car Clubs</p>
+          <p className="text-gray-300 text-center">© 2024 Car Clubs</p>
           <p className="text-gray-300 text-center">
             Image Credit: @shotbymo, @ps.newengland, @b_kerya, @sweaty_yes,
             @dhruvgshah
