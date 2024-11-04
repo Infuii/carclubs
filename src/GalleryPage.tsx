@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 
-const images = Array.from({ length: 36 }, (_, index) => `cars${index + 1}.jpg`);
+const images = Array.from({ length: 30 }, (_, index) => `cars${index + 1}.jpg`);
 
 const fadeInVariants = {
   hidden: { opacity: 0 },
@@ -9,36 +9,8 @@ const fadeInVariants = {
 };
 
 const GalleryPage = () => {
-  const [validImages, setValidImages] = useState([]);
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const loadImages = async () => {
-      const validImagesList: string[] | ((prevState: never[]) => never[]) = [];
-
-      await Promise.all(
-        images.map((image) => {
-          return new Promise<void>((resolve) => {
-            const img = new Image();
-            img.src = image;
-            img.onload = () => {
-              validImagesList.push(image);
-              resolve();
-            };
-            img.onerror = () => {
-              resolve(); // Skip this image if it fails to load
-            };
-          });
-        })
-      );
-
-      setValidImages(validImagesList as never);
-    };
-
-    loadImages();
   }, []);
 
   return (
@@ -47,20 +19,22 @@ const GalleryPage = () => {
         Gallery
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-        {validImages.map((image, index) => (
+        {images.map((image, index) => (
           <motion.div
             key={index}
-            className="w-full h-64 bg-gray-200"
+            className="relative w-full overflow-hidden"
+            style={{ paddingBottom: "100%" }} // Maintains square aspect ratio
             initial="hidden"
             animate="visible"
             variants={fadeInVariants}
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
           >
             <img
               src={image}
               alt={`Car ${index + 1}`}
-              className="object-cover w-full h-full"
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
             />
           </motion.div>
         ))}
