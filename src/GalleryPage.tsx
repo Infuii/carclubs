@@ -1,5 +1,3 @@
-import React from "react";
-
 const images = Array.from({ length: 30 }, (_, index) => `cars${index + 1}.jpg`);
 
 const CarImageGallery = () => {
