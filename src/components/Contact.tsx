@@ -60,7 +60,7 @@ const Contact = () => {
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8" id="contact">
       <div className="max-w-3xl mx-auto" ref={ref}>
         <motion.h2
-          className="text-3xl font-extrabold text-black text-left"
+          className="text-3xl font-extrabold text-gray-800 text-left"
           initial="hidden"
           animate={controls}
           variants={{
@@ -71,7 +71,7 @@ const Contact = () => {
           Contact
         </motion.h2>
         <motion.div
-          className="border-t-8 border-black mt-4 mb-8"
+          className="border-t-8 border-gray-800 mt-4 mb-8"
           initial="hidden"
           animate={controls}
           variants={{
@@ -92,10 +92,10 @@ const Contact = () => {
             },
           }}
         >
-          <p className="text-black text-lg font-semibold uppercase">
+          <p className="text-gray-800 text-lg font-semibold uppercase">
             support@hopkintoncarclub.com{" "}
           </p>
-          <p className="text-black text-lg">508-202-6778</p>
+          <p className="text-gray-800 text-lg">508-202-6778</p>
         </motion.div>
         <motion.form
           className="mt-8 space-y-6"
@@ -123,7 +123,7 @@ const Contact = () => {
                 autoComplete="name"
                 placeholder="Name"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -145,7 +145,7 @@ const Contact = () => {
                 autoComplete="email"
                 placeholder="Email *"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -166,7 +166,7 @@ const Contact = () => {
                 id="phone"
                 autoComplete="tel"
                 placeholder="Phone number"
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -187,7 +187,7 @@ const Contact = () => {
                 rows={4}
                 placeholder="Comment"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-black placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -202,7 +202,7 @@ const Contact = () => {
           <div className="text-center">
             <motion.button
               type="submit"
-              className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: {

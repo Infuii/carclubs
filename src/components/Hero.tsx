@@ -29,7 +29,10 @@ const paragraphVariants = {
 
 const underlineVariants = {
   hidden: { width: 0 },
-  visible: { width: "100%", transition: { duration: 0.8, ease: "easeOut" } },
+  visible: {
+    width: "100%",
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
 };
 
 const imageVariants = {
@@ -47,7 +50,16 @@ const overlayVariants = {
 };
 
 const buttonVariants = {
-  rest: { scale: 1, opacity: 1 },
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      delay: 1.5,
+      ease: "easeOut",
+    },
+  },
   hover: {
     scale: 1.05,
     opacity: 0.9,
@@ -72,7 +84,7 @@ const Hero = () => {
       <motion.div
         className="absolute inset-0 bg-black"
         variants={overlayVariants}
-      ></motion.div>
+      />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-4">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-4 text-center"
@@ -94,6 +106,8 @@ const Hero = () => {
           <motion.button
             className="px-8 py-3 bg-white text-black font-bold rounded-full text-lg uppercase tracking-wide"
             variants={buttonVariants}
+            initial="hidden"
+            animate="visible"
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
           >
