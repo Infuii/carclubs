@@ -9,6 +9,7 @@ import Video from "./components/Video";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   return (
     <Router>
@@ -29,6 +30,7 @@ const App = () => {
                   <Contact />
                   <Footer />
                 </section>
+                <Analytics />
               </>
             }
           />
