@@ -9,8 +9,8 @@ import Video from "./components/Video";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// Removed: import { Analytics } from "@vercel/analytics/react";
+// Removed: import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const App = () => {
   return (
@@ -37,8 +37,8 @@ const App = () => {
           />
           <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
-        <Analytics />
-        <SpeedInsights />
+        {/* Removed: <Analytics /> */}
+        {/* Removed: <SpeedInsights /> */}
       </div>
     </Router>
   );
