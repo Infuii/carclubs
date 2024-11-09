@@ -30,12 +30,12 @@ const App = () => {
                   <Contact />
                   <Footer />
                 </section>
-                <Analytics />
               </>
             }
           />
           <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
+        <Analytics />
       </div>
     </Router>
   );
