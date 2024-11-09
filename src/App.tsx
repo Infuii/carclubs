@@ -10,6 +10,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const App = () => {
   return (
     <Router>
@@ -36,6 +38,7 @@ const App = () => {
           <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
         <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   );
