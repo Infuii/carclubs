@@ -31,10 +31,10 @@ const Footer = () => {
         </div>
         <div className="mt-4">
           <p className="text-gray-300 text-center ">© 2024 Car Clubs</p>
-          <p className="text-gray-300 text-center mb-4">
+          <div className="container mx-auto pt-5 pb-5 px-5 text-center">
             Image Credit: @shotbymo, @ps.newengland, @b_kerya, @sweaty_yes,
             @dhruvgshah
-          </p>
+          </div>
         </div>
       </div>
     </footer>
