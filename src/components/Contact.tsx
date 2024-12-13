@@ -59,8 +59,9 @@ const Contact = () => {
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8" id="contact">
       <div className="max-w-3xl mx-auto" ref={ref}>
+        {/* Heading */}
         <motion.h2
-          className="text-3xl font-extrabold text-gray-800 text-left"
+          className="text-4xl font-bold text-gray-800 text-left"
           initial="hidden"
           animate={controls}
           variants={{
@@ -68,10 +69,10 @@ const Contact = () => {
             visible: { opacity: 1, y: 0, transition: { duration: 1 } },
           }}
         >
-          Contact
+          Contact Us
         </motion.h2>
         <motion.div
-          className="border-t-8 border-gray-800 mt-4 mb-8"
+          className="border-t-4 border-orange-500 mt-4 mb-10"
           initial="hidden"
           animate={controls}
           variants={{
@@ -79,8 +80,10 @@ const Contact = () => {
             visible: { width: "100%", transition: { duration: 1 } },
           }}
         />
+
+        {/* Contact Info */}
         <motion.div
-          className="flex justify-between items-center"
+          className="flex flex-col md:flex-row md:justify-between md:items-center mb-10 space-y-4 md:space-y-0"
           initial="hidden"
           animate={controls}
           variants={{
@@ -92,13 +95,15 @@ const Contact = () => {
             },
           }}
         >
-          <p className="text-gray-800 text-lg font-semibold uppercase">
-            support@hopkintoncarclub.com{" "}
+          <p className="text-gray-700 text-lg font-medium">
+            support@hopkintoncarclub.com
           </p>
-          <p className="text-gray-800 text-lg">508-202-6778</p>
+          <p className="text-gray-700 text-lg font-medium">508-202-6778</p>
         </motion.div>
+
+        {/* Form */}
         <motion.form
-          className="mt-8 space-y-6"
+          className="space-y-6"
           onSubmit={handleSubmit}
           initial="hidden"
           animate={controls}
@@ -112,6 +117,7 @@ const Contact = () => {
           }}
         >
           <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+            {/* Name */}
             <div className="sm:col-span-1">
               <label htmlFor="name" className="sr-only">
                 Name
@@ -121,9 +127,9 @@ const Contact = () => {
                 name="name"
                 id="name"
                 autoComplete="name"
-                placeholder="Name"
+                placeholder="Name *"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-orange-500 focus:border-orange-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -134,6 +140,8 @@ const Contact = () => {
                 }}
               />
             </div>
+
+            {/* Email */}
             <div className="sm:col-span-1">
               <label htmlFor="email" className="sr-only">
                 Email
@@ -145,7 +153,7 @@ const Contact = () => {
                 autoComplete="email"
                 placeholder="Email *"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-orange-500 focus:border-orange-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -156,6 +164,8 @@ const Contact = () => {
                 }}
               />
             </div>
+
+            {/* Phone */}
             <div className="sm:col-span-2">
               <label htmlFor="phone" className="sr-only">
                 Phone number
@@ -166,7 +176,7 @@ const Contact = () => {
                 id="phone"
                 autoComplete="tel"
                 placeholder="Phone number"
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-orange-500 focus:border-orange-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -177,6 +187,8 @@ const Contact = () => {
                 }}
               />
             </div>
+
+            {/* Message */}
             <div className="sm:col-span-2">
               <label htmlFor="message" className="sr-only">
                 Comment
@@ -185,9 +197,9 @@ const Contact = () => {
                 id="message"
                 name="message"
                 rows={4}
-                placeholder="Comment"
+                placeholder="Message *"
                 required
-                className="block w-full border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full border border-gray-300 rounded-md shadow-sm py-3 px-4 bg-white text-gray-800 placeholder-gray-500 focus:ring-orange-500 focus:border-orange-500"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: {
@@ -199,10 +211,12 @@ const Contact = () => {
               ></motion.textarea>
             </div>
           </div>
+
+          {/* Submit Button */}
           <div className="text-center">
             <motion.button
               type="submit"
-              className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-gray-800 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-lg font-semibold rounded-md text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: {

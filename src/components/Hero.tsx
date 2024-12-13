@@ -35,20 +35,6 @@ const underlineVariants = {
   },
 };
 
-const imageVariants = {
-  hidden: { scale: 1.2, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: { duration: 1.5, ease: "easeOut" },
-  },
-};
-
-const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 0.6, transition: { duration: 1 } },
-};
-
 const buttonVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
@@ -63,28 +49,40 @@ const buttonVariants = {
   hover: {
     scale: 1.05,
     opacity: 0.9,
-    boxShadow: "0px 0px 8px rgb(255,255,255)",
+    boxShadow: "0px 0px 8px rgb(0,0,0)",
     transition: { duration: 0.3 },
   },
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 0.6, transition: { duration: 1 } },
 };
 
 const Hero = () => {
   return (
     <motion.div
-      className="relative w-full h-screen overflow-hidden bottom-1"
+      className="relative w-full h-screen overflow-hidden"
       initial="hidden"
       animate="visible"
     >
-      <motion.img
-        src="carclubbing2.png"
-        alt="Car Clubbing"
-        className="absolute object-cover w-full h-full inset-0"
-        variants={imageVariants}
+      {/* Full-screen background video */}
+      <video
+        className="absolute inset-0 object-cover w-full h-full"
+        src="carvid.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
       />
+
+      {/* Dark overlay for contrast */}
       <motion.div
         className="absolute inset-0 bg-black"
         variants={overlayVariants}
       />
+
+      {/* Content Overlay */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white p-4">
         <motion.h1
           className="text-5xl md:text-7xl font-bold mb-4 text-center"
@@ -104,7 +102,7 @@ const Hero = () => {
         </motion.p>
         <Link to="/gallery">
           <motion.button
-            className="px-8 py-3 bg-white text-black font-bold rounded-full text-lg uppercase tracking-wide"
+            className="px-8 py-3 bg-white text-black font-bold rounded-full text-lg uppercase tracking-wide hover:bg-gray-200 transition-colors"
             variants={buttonVariants}
             initial="hidden"
             animate="visible"

@@ -5,7 +5,7 @@ import Sponsors from "./components/Sponsors";
 import About from "./components/About";
 // import Team from "./components/Team";
 import Footer from "./components/Footer";
-import Video from "./components/Video";
+// import Video from "./components/Video";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
@@ -23,7 +23,6 @@ const App = () => {
             element={
               <>
                 <Hero />
-                <Video />
                 <Sponsors />
                 <section id="about">
                   <About />

@@ -1,69 +1,51 @@
-import { useState } from "react";
 import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
 
 const Video = () => {
-  const [playing, setPlaying] = useState(false);
-  const [ready, setReady] = useState(false);
-  const state = ready;
-  console.log(state);
-  const handlePlay = () => {
-    setPlaying(true);
-  };
-
   return (
-    <div className="flex items-center justify-center py-7 bg-white">
-      <div className="w-full max-w-5xl px-4 relative">
-        <div className="relative w-full h-0 pb-[56.25%]">
-          {!playing && (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: "url('car6.JPG')",
-              }}
-            >
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                <button
-                  onClick={handlePlay}
-                  className="bg-white bg-opacity-70 p-4 rounded-full z-20"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="black"
-                    className="w-12 h-12"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </button>
-                <motion.p className="md:text-5xl text-3xl font-bold text-white mt-4 z-20 text-center">
-                  HHS Car Club | Cars & Coffee Show
-                </motion.p>
-              </div>
-              <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
-            </div>
-          )}
-          {playing && (
-            <div className="absolute inset-0">
-              <ReactPlayer
-                url="https://youtu.be/SiD8I38bP8Q"
-                playing={playing}
-                controls={true}
-                width="100%"
-                height="100%"
-                onReady={() => setReady(true)}
-                config={{
-                  youtube: {
-                    playerVars: {
-                      modestbranding: 1,
-                      showinfo: 0,
-                      rel: 0,
-                    },
-                  },
-                }}
-              />
-            </div>
-          )}
+    <div className="relative w-full h-screen">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="w-full h-full">
+          <ReactPlayer
+            url="https://youtu.be/SiD8I38bP8Q"
+            playing={true}
+            controls={false}
+            width="100%"
+            height="100%"
+            loop={true}
+            muted={true}
+            playsinline={true}
+            style={{ objectFit: "cover" }}
+            config={{
+              youtube: {
+                playerVars: {
+                  modestbranding: 1,
+                  showinfo: 0,
+                  rel: 0,
+                  controls: 0,
+                  autoplay: 1,
+                },
+              },
+            }}
+          />
+        </div>
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold mb-4 text-white text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            Hopkinton Car Club
+          </motion.h1>
+          <motion.p
+            className="text-2xl md:text-3xl text-white text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            Experience the Thrill of Our First Cars & Coffee
+          </motion.p>
         </div>
       </div>
     </div>
