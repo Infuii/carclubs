@@ -25,11 +25,12 @@ const App = () => {
               <>
                 <Hero />
                 <Sponsors />
-                <Ticket />
+                <section id="tickets">
+                  <Ticket />
+                </section>
                 <section id="about">
                   <About />
                 </section>
-                <section id="tickets"></section>
                 <section id="contact">
                   <Contact />
                   <Footer />

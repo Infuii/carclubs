@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const stripePromise = loadStripe("pk_test_12345"); // Dummy key for demo
 
@@ -28,6 +30,36 @@ const carModels = [
 ];
 
 export const Ticket: React.FC = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, delayChildren: 0.2, staggerChildren: 0.2 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
   const [selectedModel, setSelectedModel] = useState<{
     id: number;
     name: string;
@@ -36,8 +68,14 @@ export const Ticket: React.FC = () => {
   } | null>(carModels[0]);
 
   return (
-    <div className="max-w-2xl mx-auto my-10 p-6 bg-white rounded-md shadow-sm space-y-8">
-      <div className="space-y-3">
+    <motion.div
+      className="max-w-2xl mx-auto my-10 p-6 bg-white rounded-md shadow-sm space-y-8"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={containerVariants}
+    >
+      <motion.div className="space-y-3" variants={itemVariants}>
         <h2 className="text-3xl font-extrabold text-gray-800">
           Purchase Your Car Experience Ticket
         </h2>
@@ -46,9 +84,9 @@ export const Ticket: React.FC = () => {
           driving experience. This ticket grants you a test drive and a
           comprehensive orientation to the car’s features.
         </p>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div variants={itemVariants}>
         <label className="block mb-2 font-semibold text-gray-700">
           Choose a Car Model:
         </label>
@@ -79,10 +117,13 @@ export const Ticket: React.FC = () => {
             </p>
           </div>
         )}
-      </div>
+      </motion.div>
 
       <Elements stripe={stripePromise}>
-        <div className="bg-white p-4 rounded shadow-md space-y-4">
+        <motion.div
+          className="bg-white p-4 rounded shadow-md space-y-4"
+          variants={itemVariants}
+        >
           <h3 className="text-xl font-semibold text-gray-800 mb-2">
             Your Payment Details
           </h3>
@@ -133,14 +174,18 @@ export const Ticket: React.FC = () => {
               Proceed to Checkout
             </button>
           </div>
-        </div>
+        </motion.div>
       </Elements>
 
-      <div className="text-sm text-center text-gray-500">
+      <motion.div
+        className="text-sm text-center text-gray-500"
+        variants={itemVariants}
+      >
         *This is a demonstration of the checkout experience. No actual charges
         will be made.
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
+
 export default Ticket;

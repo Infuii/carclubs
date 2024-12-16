@@ -85,10 +85,10 @@ const About = () => {
                 className="text-lg text-gray-300 mb-4"
                 variants={textVariant}
               >
-                Welcome to the official website of HHS Car Club. We are a group
-                of car-fanatic students from Hopkinton High School. If you are
-                interested in joining our team or collaborating with us in the
-                future, feel free to read further!
+                Welcome to the official website of the Hopkinton Car Club. We
+                are a group of car-fanatic students from Hopkinton High School.
+                If you are interested in joining our team or collaborating with
+                us in the future, feel free to read further!
               </motion.p>
               <motion.p
                 className="text-lg font-medium text-white mb-2"

@@ -18,13 +18,15 @@ const textVariants = {
 };
 
 const underlineVariants = {
-  hidden: { width: 0 },
-  visible: { width: "100%", transition: { duration: 0.5 } },
+  // hidden: { width: 0 }, removed for now since navbar coming down from top removed
+  // visible: { width: "100%", transition: { duration: 0.5 } },
 };
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("");
-  const headerText = "HHS CAR CLUB";
+
+  const headerTexts = ["HOPKINTON", "CAR", "CLUB"];
+
   const location = useLocation();
 
   useEffect(() => {
@@ -43,24 +45,27 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-white text-gray-800 py-8 w-full z-10 border-b border-gray-200 overflow-x-hidden shadow-sm relative top-0"
+      className="bg-white text-gray-800  py-6 w-full z-10 border-b border-gray-200 overflow-x-hidden shadow-sm relative top-0"
       initial="hidden"
       animate="visible"
     >
       <nav className="container mx-auto flex flex-col items-center px-4 sm:px-8 lg:px-16 xl:px-24">
         <div className="text-2xl font-bold relative flex-nowrap overflow-hidden">
-          {headerText.split("").map((char, index) => (
-            <motion.span
-              key={index}
-              className="inline-block"
-              custom={index}
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-            >
-              {char}
-            </motion.span>
-          ))}
+          {headerTexts
+            .join(" ")
+            .split("")
+            .map((char, index) => (
+              <motion.span
+                key={index}
+                className="inline-block"
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={textVariants}
+              >
+                {char === " " ? "\u00A0" : char}
+              </motion.span>
+            ))}
         </div>
         <motion.div
           className="border-t border-b border-orange-400 mt-4 w-full"
@@ -122,27 +127,6 @@ const Header = () => {
           <motion.li variants={linkVariants} className="relative">
             <HashLink
               smooth
-              to="/#about"
-              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
-            >
-              About
-              <AnimatePresence>
-                {activeLink === "about" && (
-                  <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={underlineVariants}
-                    key="about-underline"
-                  />
-                )}
-              </AnimatePresence>
-            </HashLink>
-          </motion.li>
-          <motion.li variants={linkVariants} className="relative">
-            <HashLink
-              smooth
               to="/#tickets"
               className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
             >
@@ -161,6 +145,28 @@ const Header = () => {
               </AnimatePresence>
             </HashLink>
           </motion.li>
+          <motion.li variants={linkVariants} className="relative">
+            <HashLink
+              smooth
+              to="/#about"
+              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+            >
+              About
+              <AnimatePresence>
+                {activeLink === "about" && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={underlineVariants}
+                    key="about-underline"
+                  />
+                )}
+              </AnimatePresence>
+            </HashLink>
+          </motion.li>
+
           <motion.li variants={linkVariants} className="relative">
             <HashLink
               smooth

@@ -16,7 +16,7 @@ const Footer = () => {
           {/* Column 1: Company Info */}
           <div>
             <h3 className="text-gray-800 font-bold text-lg uppercase tracking-wider mb-4">
-              HHS Car Club
+              Hopkinton Car Club
             </h3>
             <p className="text-gray-600 text-sm leading-relaxed">
               Bringing automotive enthusiasm to the Hopkinton community. Join us
