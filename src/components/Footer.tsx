@@ -31,14 +31,14 @@ const Footer = () => {
             </h3>
             <div className="flex space-x-4">
               <a
-                href="https://www.youtube.com/@hhscarclub"
+                href="https://www.youtube.com/channel/UCmhw8qIcyGMVHappkuv_i7w"
                 className="text-gray-600 hover:text-red-600 transform hover:scale-110 transition duration-200"
                 aria-label="YouTube"
               >
                 <FaYoutube size={32} />
               </a>
               <a
-                href="https://www.instagram.com/hhscarclub/"
+                href="https://www.instagram.com/hopkintoncarclub/"
                 className="text-gray-600 hover:text-pink-600 transform hover:scale-110 transition duration-200"
                 aria-label="Instagram"
               >
