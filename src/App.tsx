@@ -24,7 +24,6 @@ const App = () => {
             element={
               <>
                 <Hero />
-                <Sponsors />
                 <section id="tickets">
                   <Ticket />
                 </section>
@@ -32,6 +31,7 @@ const App = () => {
                   <About />
                 </section>
                 <section id="contact">
+                <Sponsors />
                   <Contact />
                   <Footer />
                 </section>

@@ -141,7 +141,7 @@ const About = () => {
               >
                 We are always open to new ways that we can help our community.
                 If you would like to join or collaborate with us, DM @hhscarclub
-                on Instagram or email us at hhscarclub0@gmail.com.
+                on Instagram or email us at support@hopkintoncarclub.com
               </motion.p>
             </motion.div>
             <motion.div className=" flex-col space-y-4 md:w-1/2 md:block hidden">
