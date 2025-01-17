@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
-import Ticket from "./components/Ticket";
+// import Ticket from "./components/Ticket";
 // Removed: import { Analytics } from "@vercel/analytics/react";
 // Removed: import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -25,7 +25,7 @@ const App = () => {
               <>
                 <Hero />
                 <section id="tickets">
-                  <Ticket />
+                  {/* <Ticket /> */}
                 </section>
                 <section id="about">
                   <About />
