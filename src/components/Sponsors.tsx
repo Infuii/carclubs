@@ -46,7 +46,7 @@ const Sponsors = () => {
           className="text-4xl font-bold mb-8 text-black"
           variants={itemVariants}
         >
-          2024 Premier Sponsors
+          2024 Partners
         </motion.h2>
         <div className="flex flex-wrap justify-center items-center">
           <motion.div className="w-full md:w-1/4 p-4" variants={itemVariants}>
@@ -60,6 +60,13 @@ const Sponsors = () => {
             <img
               src="sponsor2.png"
               alt="Sponsor 2"
+              className="w-full h-auto object-cover"
+            />
+          </motion.div>
+          <motion.div className="w-full md:w-1/4 p-4" variants={itemVariants}>
+            <img
+              src="sponsor3.jpg"
+              alt="Sponsor 3"
               className="w-full h-auto object-cover"
             />
           </motion.div>
