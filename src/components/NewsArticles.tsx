@@ -70,7 +70,7 @@ const NewsArticles = () => {
                 href="https://hopnews.com/first-hhs-car-show-cruises-to-success/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors duration-300"
+                className="inline-block bg-[#186F48] text-white py-2 px-4 rounded-md hover:bg-green-700 hover:text-white transition-colors duration-300"
               >
                 Read Full Article
               </a>
@@ -100,7 +100,7 @@ const NewsArticles = () => {
                 href="https://hhspress.org/21279/student-life/shifting-gears-hopkinton-highs-new-car-club/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors duration-300"
+                className="inline-block bg-[#186F48] text-white py-2 px-4 rounded-md hover:bg-green-700 hover:text-white transition-colors duration-300"
               >
                 Read Full Article
               </a>

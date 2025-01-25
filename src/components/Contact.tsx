@@ -72,7 +72,7 @@ const Contact = () => {
           Contact Us
         </motion.h2>
         <motion.div
-          className="border-t-4 border-green-500 mt-4 mb-10"
+          className="border-t-4 border-[#186F48] mt-4 mb-10"
           initial="hidden"
           animate={controls}
           variants={{
@@ -216,7 +216,7 @@ const Contact = () => {
           <div className="text-center">
             <motion.button
               type="submit"
-              className="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-lg font-semibold rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
+              className="inline-flex justify-center py-3 px-8 border border-transparent shadow-sm text-lg font-semibold rounded-md text-white bg-[#186F48] hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition-colors duration-200"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: {
