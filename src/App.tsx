@@ -1,17 +1,12 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Sponsors from "./components/Sponsors";
-// import Gallery from "./components/Gallery";
 import About from "./components/About";
-// import Team from "./components/Team";
 import Footer from "./components/Footer";
-// import Video from "./components/Video";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
-// import Ticket from "./components/Ticket";
-// Removed: import { Analytics } from "@vercel/analytics/react";
-// Removed: import { SpeedInsights } from "@vercel/speed-insights/next";
+import NewsArticles from "./components/NewsArticles"; // Add this import
 
 const App = () => {
   return (
@@ -25,13 +20,13 @@ const App = () => {
               <>
                 <Hero />
                 <section id="tickets">
-                  {/* <Ticket /> */}
+                  <NewsArticles />
                 </section>
                 <section id="about">
                   <About />
                 </section>
                 <section id="contact">
-                <Sponsors />
+                  <Sponsors />
                   <Contact />
                   <Footer />
                 </section>
@@ -40,8 +35,6 @@ const App = () => {
           />
           <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
-        {/* Removed: <Analytics /> */}
-        {/* Removed: <SpeedInsights /> */}
       </div>
     </Router>
   );

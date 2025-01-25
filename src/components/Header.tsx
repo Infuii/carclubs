@@ -45,7 +45,9 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-gradient-to-r from-green-900 to-green-600 text-white py-6 w-full z-10 border-b border-green-400 overflow-x-hidden shadow-lg relative top-0"
+      className="bg-gradient-to-r 
+      from-[#0B3E27] to-[#186F48]
+      text-white py-3 w-full z-10 shadow-lg relative top-0"
       initial="hidden"
       animate="visible"
     >
@@ -68,7 +70,7 @@ const Header = () => {
             ))}
         </div>
         <motion.div
-          className="border-t border-b border-green-300 mt-4 w-full"
+          className="border-t border-white mt-4 w-full"
           initial={{ width: 0 }}
           animate={{ width: "50%" }}
           transition={{ duration: 2 }}
