@@ -51,14 +51,7 @@ const About = () => {
     },
   };
 
-  const imageVariant3 = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 1, delay: 0.5 },
-    },
-  };
+  
 
   return (
     <div
@@ -160,13 +153,7 @@ const About = () => {
                   style={{ zIndex: 5 }}
                   variants={imageVariant2}
                 />
-                <motion.img
-                  src="car7.JPG" // Adjust the path as necessary
-                  alt="Car Clubbing 3"
-                  className="absolute top-20 left-20 w-2/3 h-auto object-cover shadow-lg"
-                  style={{ zIndex: 1 }}
-                  variants={imageVariant3}
-                />
+                
               </div>
             </motion.div>
           </motion.div>
