@@ -9,16 +9,16 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-white border-t border-gray-200" id="contact">
+    <footer className="bg-gradient-to-r from-[#0B3E27] to-[#186F48] text-white" id="contact">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Top Section: Four Columns */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {/* Column 1: Company Info */}
           <div>
-            <h3 className="text-gray-800 font-bold text-lg uppercase tracking-wider mb-4">
+            <h3 className="text-white font-bold text-lg uppercase tracking-wider mb-4">
               Hopkinton Car Club
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-200 text-sm leading-relaxed">
               Bringing automotive enthusiasm to the Hopkinton community. Join us
               for events, showcases, and more.
             </p>
@@ -26,27 +26,27 @@ const Footer = () => {
 
           {/* Column 2: Follow Us */}
           <div>
-            <h3 className="text-gray-800 font-bold text-lg uppercase tracking-wider mb-4">
+            <h3 className="text-white font-bold text-lg uppercase tracking-wider mb-4">
               Follow Us
             </h3>
             <div className="flex space-x-4">
               <a
                 href="https://www.youtube.com/channel/UCmhw8qIcyGMVHappkuv_i7w"
-                className="text-gray-600 hover:text-red-600 transform hover:scale-110 transition duration-200"
+                className="text-gray-200 hover:text-white transform hover:scale-110 transition duration-200"
                 aria-label="YouTube"
               >
                 <FaYoutube size={32} />
               </a>
               <a
                 href="https://www.instagram.com/hopkintoncarclub/"
-                className="text-gray-600 hover:text-pink-600 transform hover:scale-110 transition duration-200"
+                className="text-gray-200 hover:text-white transform hover:scale-110 transition duration-200"
                 aria-label="Instagram"
               >
                 <FaInstagram size={32} />
               </a>
               <a
                 href="https://www.tiktok.com/@hopkintoncarclub"
-                className="text-gray-600 hover:text-black transform hover:scale-110 transition duration-200"
+                className="text-gray-200 hover:text-white transform hover:scale-110 transition duration-200"
                 aria-label="TikTok"
               >
                 <FaTiktok size={32} />
@@ -56,14 +56,14 @@ const Footer = () => {
 
           {/* Column 3: Useful Links */}
           <div>
-            <h3 className="text-gray-800 font-bold text-lg uppercase tracking-wider mb-4">
+            <h3 className="text-white font-bold text-lg uppercase tracking-wider mb-4">
               Useful Links
             </h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href="/"
-                  className="hover:text-orange-500 text-gray-600 transition"
+                  className="text-gray-200 hover:text-white transition"
                 >
                   Home
                 </a>
@@ -71,7 +71,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/gallery"
-                  className="hover:text-orange-500 text-gray-600 transition"
+                  className="text-gray-200 hover:text-white transition"
                 >
                   Gallery
                 </a>
@@ -79,7 +79,7 @@ const Footer = () => {
               <li>
                 <a
                   href="/#about"
-                  className="hover:text-orange-500 text-gray-600  transition"
+                  className="text-gray-200 hover:text-white transition"
                 >
                   About
                 </a>
@@ -87,15 +87,15 @@ const Footer = () => {
               <li>
                 <a
                   href="/#tickets"
-                  className="hover:text-orange-500 text-gray-600 transition"
+                  className="text-gray-200 hover:text-white transition"
                 >
-                  Tickets
+                  News
                 </a>
               </li>
               <li>
                 <a
                   href="/#contact"
-                  className="hover:text-orange-500 text-gray-600 transition"
+                  className="text-gray-200 hover:text-white transition"
                 >
                   Contact
                 </a>
@@ -105,24 +105,24 @@ const Footer = () => {
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="text-gray-800 font-bold text-lg uppercase tracking-wider mb-4">
+            <h3 className="text-white font-bold text-lg uppercase tracking-wider mb-4">
               Contact
             </h3>
-            <ul className="space-y-3 text-sm text-gray-600 ">
-              <li className="flex items-center text-gray-500 mr-2">
-                <div className="text-gray-500 mr-2">
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center text-gray-200">
+                <div className="text-gray-200 mr-2">
                   <FaMapMarkerAlt />
                 </div>
                 Hopkinton, MA, USA
               </li>
-              <li className="flex items-center text-gray-500 mr-2">
-                <div className="text-gray-500 mr-2">
+              <li className="flex items-center text-gray-200">
+                <div className="text-gray-200 mr-2">
                   <FaEnvelope />
                 </div>
                 support@hopkintoncarclub.com
               </li>
-              <li className="flex items-center ">
-                <div className="text-gray-500 mr-2">
+              <li className="flex items-center text-gray-200">
+                <div className="text-gray-200 mr-2">
                   <FaPhone />
                 </div>
                 508-202-6778
@@ -132,12 +132,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section: Divider & Credits */}
-        <div className="border-t border-gray-300 pt-6">
-          <p className="text-center text-gray-500 text-sm ">
+        <div className="border-t border-gray-200/20 pt-6">
+          <p className="text-center text-gray-200 text-sm">
             © {new Date().getFullYear()} Hopkinton Car Club. All rights
             reserved.
           </p>
-          <p className="text-center text-gray-400 text-xs">
+          <p className="text-center text-gray-300 text-xs mt-2">
             Photo Credits: @shotbymo • @ps.newengland • @b_kerya • @sweaty_yes •
             @dhruvgshah
           </p>
