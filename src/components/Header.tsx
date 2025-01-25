@@ -45,7 +45,7 @@ const Header = () => {
 
   return (
     <motion.header
-      className="bg-white text-gray-800  py-6 w-full z-10 border-b border-gray-200 overflow-x-hidden shadow-sm relative top-0"
+      className="bg-gradient-to-r from-green-900 to-green-600 text-white py-6 w-full z-10 border-b border-green-400 overflow-x-hidden shadow-lg relative top-0"
       initial="hidden"
       animate="visible"
     >
@@ -68,7 +68,7 @@ const Header = () => {
             ))}
         </div>
         <motion.div
-          className="border-t border-b border-orange-400 mt-4 w-full"
+          className="border-t border-b border-green-300 mt-4 w-full"
           initial={{ width: 0 }}
           animate={{ width: "50%" }}
           transition={{ duration: 2 }}
@@ -79,13 +79,13 @@ const Header = () => {
               <HashLink
                 smooth
                 to="/#home"
-                className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+                className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
               >
                 Home
                 <AnimatePresence>
                   {activeLink === "home" && (
                     <motion.div
-                      className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                      className="absolute bottom-0 left-0 h-1 bg-green-300"
                       initial="hidden"
                       animate="visible"
                       exit="hidden"
@@ -98,7 +98,7 @@ const Header = () => {
             ) : (
               <Link
                 to="/"
-                className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+                className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
               >
                 Home
               </Link>
@@ -107,13 +107,13 @@ const Header = () => {
           <motion.li variants={linkVariants} className="relative">
             <Link
               to={"/gallery"}
-              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+              className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
             >
               Gallery
               <AnimatePresence>
                 {activeLink === "gallery" && (
                   <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                    className="absolute bottom-0 left-0 h-1 bg-green-300"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
@@ -128,13 +128,13 @@ const Header = () => {
             <HashLink
               smooth
               to="/#tickets"
-              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+              className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
             >
               Tickets
               <AnimatePresence>
                 {activeLink === "tickets" && (
                   <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                    className="absolute bottom-0 left-0 h-1 bg-green-300"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
@@ -149,13 +149,13 @@ const Header = () => {
             <HashLink
               smooth
               to="/#about"
-              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+              className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
             >
               About
               <AnimatePresence>
                 {activeLink === "about" && (
                   <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                    className="absolute bottom-0 left-0 h-1 bg-green-300"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"
@@ -171,13 +171,13 @@ const Header = () => {
             <HashLink
               smooth
               to="/#contact"
-              className="cursor-pointer uppercase text-gray-800 hover:text-orange-400 transition-colors duration-300"
+              className="cursor-pointer uppercase text-green-100 hover:text-green-300 transition-colors duration-300"
             >
               Contact
               <AnimatePresence>
                 {activeLink === "contact" && (
                   <motion.div
-                    className="absolute bottom-0 left-0 h-1 bg-orange-400"
+                    className="absolute bottom-0 left-0 h-1 bg-green-300"
                     initial="hidden"
                     animate="visible"
                     exit="hidden"

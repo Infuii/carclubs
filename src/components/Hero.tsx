@@ -56,7 +56,7 @@ const buttonVariants = {
 
 const overlayVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 0.6, transition: { duration: 1 } },
+  visible: { opacity: 0.4, transition: { duration: 1 } }, // Reduced opacity from 0.6 to 0.4
 };
 
 const Hero = () => {
