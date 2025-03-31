@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GalleryPage from "./GalleryPage";
 import Contact from "./components/Contact";
 import NewsArticles from "./components/NewsArticles";
-import RegistrationForm from "./components/RegistrationForm"; 
+// import RegistrationForm from "./components/RegistrationForm"; 
 
 const App = () => {
   return (
@@ -20,7 +20,7 @@ const App = () => {
             element={
               <>
                 <Hero />
-                <RegistrationForm />
+                {/* <RegistrationForm /> */}
                 <section id="tickets">
                   <NewsArticles />
                 </section>
